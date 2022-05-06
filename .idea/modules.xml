@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/accounting/accounting.iml" filepath="$PROJECT_DIR$/accounting/accounting.iml" />
+      <module fileurl="file://$PROJECT_DIR$/delivery/delivery.iml" filepath="$PROJECT_DIR$/delivery/delivery.iml" />
+      <module fileurl="file://$PROJECT_DIR$/course/digital-microservices.iml" filepath="$PROJECT_DIR$/course/digital-microservices.iml" />
+      <module fileurl="file://$PROJECT_DIR$/eurekaServer/eurekaServer.iml" filepath="$PROJECT_DIR$/eurekaServer/eurekaServer.iml" />
+      <module fileurl="file://$PROJECT_DIR$/gateway/gateway.iml" filepath="$PROJECT_DIR$/gateway/gateway.iml" />
+      <module fileurl="file://$PROJECT_DIR$/kitchen/kitchen.iml" filepath="$PROJECT_DIR$/kitchen/kitchen.iml" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/mIcroServiceDemo.iml" filepath="$PROJECT_DIR$/.idea/mIcroServiceDemo.iml" />
+      <module fileurl="file://$PROJECT_DIR$/notification/notification.iml" filepath="$PROJECT_DIR$/notification/notification.iml" />
+      <module fileurl="file://$PROJECT_DIR$/order/order.iml" filepath="$PROJECT_DIR$/order/order.iml" />
+      <module fileurl="file://$PROJECT_DIR$/restaurant/restaurant.iml" filepath="$PROJECT_DIR$/restaurant/restaurant.iml" />
+    </modules>
+  </component>
+</project>

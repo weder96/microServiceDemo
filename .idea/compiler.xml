@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="CompilerConfiguration">
+    <annotationProcessing>
+      <profile default="true" name="Default" enabled="true" />
+      <profile name="Maven default annotation processors profile" enabled="true">
+        <sourceOutputDir name="target/generated-sources/annotations" />
+        <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
+        <outputRelativeToContentRoot value="true" />
+        <module name="digital-microservices" />
+        <module name="delivery" />
+        <module name="notification" />
+        <module name="restaurant" />
+        <module name="accounting" />
+        <module name="kitchen" />
+        <module name="eurekaServer" />
+        <module name="gateway" />
+        <module name="order" />
+      </profile>
+    </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="accounting" target="11" />
+      <module name="delivery" target="11" />
+      <module name="digital-microservices" target="11" />
+      <module name="eurekaServer" target="11" />
+      <module name="eurekaService" target="11" />
+      <module name="gateway" target="11" />
+      <module name="kitchen" target="11" />
+      <module name="mIcroServiceDemo" target="11" />
+      <module name="notification" target="11" />
+      <module name="order" target="11" />
+      <module name="restaurant" target="11" />
+    </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="accounting" options="-parameters" />
+      <module name="delivery" options="-parameters" />
+      <module name="digital-microservices" options="-parameters" />
+      <module name="eurekaServer" options="-parameters" />
+      <module name="eurekaService" options="-parameters" />
+      <module name="gateway" options="-parameters" />
+      <module name="kitchen" options="-parameters" />
+      <module name="notification" options="-parameters" />
+      <module name="order" options="-parameters" />
+      <module name="restaurant" options="-parameters" />
+    </option>
+  </component>
+</project>
