@@ -2,13 +2,17 @@ package com.wsousa.order.controller;
 
 import com.wsousa.order.dto.AccountingDTO;
 import com.wsousa.order.service.OrderService;
+import io.github.resilience4j.circuitbreaker.annotation.CircuitBreaker;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
+
+import java.util.HashMap;
+import java.util.Map;
 
 
 @RestController
@@ -23,10 +27,19 @@ public class OrderController {
         this.orderService = orderService;
     }
 
-    @GetMapping(produces = MediaType.APPLICATION_JSON_VALUE)
-    public ResponseEntity<AccountingDTO> list(){
-        ResponseEntity<AccountingDTO> accountingDTO = this.orderService.getDataAccounting("nxvfg23");
-        return  accountingDTO;
+    private Map<String , AccountingDTO> CACHE = new HashMap<>();
+
+    @CircuitBreaker(name = "orderCB", fallbackMethod = "fallback")
+    @GetMapping(path = "/{id_accounting}", produces = MediaType.APPLICATION_JSON_VALUE)
+    public AccountingDTO list(@PathVariable(name = "id_accounting") String id){
+        ResponseEntity<AccountingDTO> accountingDTO = this.orderService.getDataAccounting(id);
+        CACHE.put(id, accountingDTO.getBody());
+        return  accountingDTO.getBody();
+    }
+
+    private AccountingDTO fallback(String idAccounting, IllegalArgumentException e) {
+        log.info("FallBack  Call");
+        return CACHE.getOrDefault(idAccounting, new AccountingDTO());
     }
 
 }

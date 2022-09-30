@@ -1,0 +1,14 @@
+filebeat.inputs:
+  - type: log
+    enabled: true
+    tags: ["delivery"]
+    paths:
+      - /data/logs/*.log
+    exclude_files: ['\.gz$']
+
+output.kafka:
+  enabled: true
+  hosts: ["kafka:9092"]
+  topic: "delivery-logs"
+  codec.json:
+    pretty: false
